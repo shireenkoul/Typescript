@@ -1,9 +1,39 @@
-function add(n1 : number , n2 : number){
-    return n1 + n2;
+// const person: {
+//   name: string;
+//   lastName: string;
+//   age: number;
+//   hobbies: string[];
+//   role: [number, string];
+// } = {
+//   name: "Shireen",
+//   lastName: "Koul",
+//   age: 25,
+//   hobbies: ["Sports", "Cooking"],
+//   role: [2, "author"]
+// };
+
+enum Role {
+  AUTHOR,
+  ADMIN
 }
 
-const n1 = 5;
-const n2 = 2.5;
+const person = {
+  name: "Shireen",
+  lastName: "Koul",
+  age: 25,
+  hobbies: ["Sports", "Cooking"],
+  role: Role.ADMIN
+};
 
-const result = add(n1, n2);
-console.log(result);
+let favActivities: string[];
+favActivities = ["Reading", "Hello"];
+
+console.log(person.name);
+
+for (const hobby of person.hobbies) {
+  console.log(hobby.toUpperCase());
+}
+
+// person.role.push("admin");
+
+console.log(person.role); // This is a downside
