@@ -1,34 +1,20 @@
-// const person: {
-//   name: string;
-//   lastName: string;
-//   age: number;
-//   hobbies: string[];
-//   role: [number, string];
-// } = {
-//   name: "Shireen",
-//   lastName: "Koul",
-//   age: 25,
-//   hobbies: ["Sports", "Cooking"],
-//   role: [2, "author"]
-// };
-var Role;
-(function (Role) {
-    Role[Role["AUTHOR"] = 0] = "AUTHOR";
-    Role[Role["ADMIN"] = 1] = "ADMIN";
-})(Role || (Role = {}));
-var person = {
-    name: "Shireen",
-    lastName: "Koul",
-    age: 25,
-    hobbies: ["Sports", "Cooking"],
-    role: Role.ADMIN
-};
-var favActivities;
-favActivities = ["Reading", "Hello"];
-console.log(person.name);
-for (var _i = 0, _a = person.hobbies; _i < _a.length; _i++) {
-    var hobby = _a[_i];
-    console.log(hobby.toUpperCase());
+function add(n1, n2) {
+    return n1 + n2;
 }
-// person.role.push("admin");
-console.log(person.role); // This is a downside
+function printResult(n1) {
+    console.log("Result : " + n1);
+}
+printResult(add(5, 3));
+function addAndHandle(n1, n2, cb) {
+    var result = n1 + n2;
+    cb(result);
+}
+// let combineValues : Function;
+var combineValues;
+combineValues = add;
+// combineValues = printResult;
+// combineValues = 5;
+console.log(combineValues(2, 2));
+addAndHandle(2, 5, function (result) {
+    console.log(result);
+});
